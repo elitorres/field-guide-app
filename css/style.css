@@ -1,0 +1,588 @@
+/* ==========================================================================
+   Field Guide — shared stylesheet
+   Palette: forest green / leaf / cream paper / bark / terracotta accent
+   ========================================================================== */
+
+:root {
+  --color-forest: #1f3d24;
+  --color-leaf: #4f7942;
+  --color-leaf-light: #7fa86f;
+  --color-cream: #faf6ec;
+  --color-paper: #fffdf7;
+  --color-bark: #5b4636;
+  --color-accent: #c1622d;
+  --color-accent-light: #e8c9a0;
+  --color-ink: #24291f;
+  --color-muted: #6b6255;
+  --color-border: #ddd3bd;
+
+  --font-heading: Georgia, "Times New Roman", "Noto Serif", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --max-width: 960px;
+  --radius: 10px;
+  --shadow: 0 2px 10px rgba(31, 61, 36, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-cream);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-forest);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-forest);
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+/* ---------------- Header / Nav ---------------- */
+
+.site-header {
+  background: var(--color-forest);
+  color: var(--color-cream);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-cream);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+.brand .leaf-icon {
+  font-size: 1.4rem;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--color-leaf-light);
+  color: var(--color-cream);
+  border-radius: 6px;
+  font-size: 1rem;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.1rem;
+}
+
+.site-nav a {
+  color: var(--color-cream);
+  text-decoration: none;
+  font-size: 0.92rem;
+  padding: 0.35rem 0.2rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease, opacity 0.15s ease;
+  opacity: 0.85;
+}
+
+.site-nav a:hover {
+  opacity: 1;
+  border-bottom-color: var(--color-accent-light);
+}
+
+.site-nav a.active {
+  opacity: 1;
+  border-bottom-color: var(--color-accent);
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: inline-block;
+  }
+  .site-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 0.5rem;
+  }
+  .site-nav.open {
+    display: flex;
+  }
+  .site-nav a {
+    padding: 0.6rem 0.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .nav-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+/* ---------------- Layout shells ---------------- */
+
+.page-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--color-forest), var(--color-leaf));
+  color: var(--color-cream);
+  padding: 3rem 1.25rem;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--color-cream);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  max-width: 640px;
+  margin: 0 auto;
+  opacity: 0.92;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2rem 1.25rem;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---------------- Cards / grid (index page) ---------------- */
+
+.species-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.species-card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--color-ink);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.species-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(31, 61, 36, 0.15);
+}
+
+.species-card .thumb {
+  aspect-ratio: 4 / 3;
+  background: var(--color-accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-bark);
+  font-size: 2.4rem;
+  overflow: hidden;
+}
+
+.species-card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.species-card .card-body {
+  padding: 1rem 1.1rem 1.25rem;
+}
+
+.species-card .biome-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--color-leaf);
+  color: #fff;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+.species-card h3 {
+  margin-bottom: 0.15rem;
+  font-size: 1.15rem;
+}
+
+.species-card .sci-name {
+  font-style: italic;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* ---------------- Species entry page ---------------- */
+
+.species-header {
+  text-align: center;
+  padding: 2.5rem 1.25rem 2rem;
+  background: var(--color-paper);
+  border-bottom: 3px solid var(--color-leaf);
+}
+
+.species-header .biome-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--color-leaf);
+  color: #fff;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.species-header h1 {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  margin-bottom: 0.2rem;
+}
+
+.species-header .sci-name {
+  font-style: italic;
+  color: var(--color-muted);
+  font-size: 1.1rem;
+}
+
+.species-header .region {
+  margin-top: 0.6rem;
+  color: var(--color-bark);
+  font-size: 0.95rem;
+}
+
+.hero-image {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-accent-light),
+    var(--color-accent-light) 12px,
+    #f2e2c7 12px,
+    #f2e2c7 24px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-bark);
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image.has-photo {
+  padding: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-image .photo-credit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(31, 61, 36, 0.75);
+  color: var(--color-cream);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px 0 0 0;
+}
+
+.hero-image .photo-credit a {
+  color: var(--color-cream);
+  text-decoration: underline;
+}
+
+.photo-figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+}
+
+.entry-section {
+  margin-top: 2.5rem;
+}
+
+.entry-section > h2 {
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.entry-section > h2 .letter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: var(--color-forest);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+  font-family: var(--font-body);
+  vertical-align: middle;
+}
+
+.placeholder-text {
+  color: var(--color-muted);
+  font-style: italic;
+  background: #f4ede0;
+  border: 1px dashed var(--color-border);
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+}
+
+.aspect-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.aspect-card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.aspect-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.aspect-card .icon {
+  font-size: 1.1rem;
+}
+
+.image-caption {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  text-align: center;
+  margin-top: 0.4rem;
+}
+
+.diagram-placeholder {
+  background: var(--color-paper);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+/* ---------------- References ---------------- */
+
+.ref-list {
+  list-style: none;      /* APA 7: reference lists are not numbered/bulleted */
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.ref-list li {
+  margin-bottom: 0.65rem;
+  padding-left: 2.2rem;
+  text-indent: -2.2rem;  /* APA 7 hanging indent */
+}
+
+.ref-species-block {
+  margin-bottom: 2rem;
+}
+
+.ref-species-block h2 {
+  font-size: 1.25rem;
+  color: var(--color-forest);
+}
+
+.ref-species-block .sci-name {
+  font-style: italic;
+  font-weight: normal;
+  color: var(--color-muted);
+}
+
+.peer-reviewed-tag {
+  font-size: 0.7rem;
+  background: var(--color-leaf);
+  color: #fff;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+/* ---------------- Family tree page ---------------- */
+
+.tree-wrap {
+  background: var(--color-paper);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+/* ---------------- Utility ---------------- */
+
+.note-box {
+  background: #eef3e6;
+  border-left: 4px solid var(--color-leaf);
+  padding: 0.9rem 1.1rem;
+  border-radius: 0 6px 6px 0;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 700px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.page-title {
+  margin-bottom: 0.25rem;
+}
+
+.page-subtitle {
+  color: var(--color-muted);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------------- Progressive reveal (content not yet due) ---------------- */
+/* Content stays in the HTML but is not rendered — remove this class (or the
+   rule below) in a later week to bring a section/citation back into view. */
+
+.not-yet-shown {
+  display: none;
+}
+
+/* ---------------- In-text citations ---------------- */
+
+.cite {
+  color: var(--color-forest);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--color-leaf);
+  font-size: 0.95em;
+}
+
+.cite:hover {
+  color: var(--color-accent);
+}
+
+/* ---------------- Print / PDF export ---------------- */
+
+@media print {
+  .site-header,
+  .nav-toggle,
+  .site-footer {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .hero {
+    background: none;
+    color: var(--color-forest);
+    border-bottom: 2px solid var(--color-forest);
+  }
+
+  .hero h1 {
+    color: var(--color-forest);
+  }
+
+  .species-header {
+    border-bottom: 2px solid var(--color-forest);
+  }
+
+  .entry-section {
+    page-break-inside: avoid;
+  }
+
+  .aspect-card,
+  .species-card,
+  .diagram-placeholder,
+  .placeholder-text {
+    break-inside: avoid;
+  }
+
+  .hero-image {
+    aspect-ratio: auto;
+    max-height: 4in;
+  }
+}
