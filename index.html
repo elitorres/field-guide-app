@@ -81,29 +81,76 @@
     <div class="species-grid" style="margin-top: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
       <a class="species-card" href="family-tree.html">
         <div class="thumb thumb-tree">
-          <svg viewBox="0 0 300 225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block" role="img" aria-label="A small family tree with the four species as leaves on its branches">
+          <svg viewBox="0 0 300 225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block" role="img" aria-label="An illustrated family tree with the four species as circular photos on its branches">
             <defs>
+              <linearGradient id="trunkG" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#a5703a"/>
+                <stop offset="0.5" stop-color="#875327"/>
+                <stop offset="1" stop-color="#6a411d"/>
+              </linearGradient>
+              <linearGradient id="leafG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#84b45c"/>
+                <stop offset="1" stop-color="#4d7a2e"/>
+              </linearGradient>
+              <radialGradient id="bgG" cx="0.5" cy="0.32" r="0.85">
+                <stop offset="0" stop-color="#f8f3e6"/>
+                <stop offset="1" stop-color="#e9e0ca"/>
+              </radialGradient>
               <clipPath id="mt1"><circle cx="48" cy="54" r="27"/></clipPath>
               <clipPath id="mt2"><circle cx="116" cy="46" r="27"/></clipPath>
               <clipPath id="mt3"><circle cx="184" cy="46" r="27"/></clipPath>
               <clipPath id="mt4"><circle cx="252" cy="54" r="27"/></clipPath>
+              <g id="leaf"><ellipse cx="0" cy="0" rx="7.5" ry="3.6" fill="url(#leafG)"/><path d="M-7,0 L7,0" stroke="#3f6a28" stroke-width="0.8" opacity="0.6"/></g>
             </defs>
-            <g stroke="#8a5a2b" stroke-width="6" stroke-linecap="round" fill="none">
-              <line x1="150" y1="216" x2="150" y2="150"/>
-              <line x1="150" y1="150" x2="48" y2="81"/>
-              <line x1="150" y1="150" x2="116" y2="73"/>
-              <line x1="150" y1="150" x2="184" y2="73"/>
-              <line x1="150" y1="150" x2="252" y2="81"/>
+
+            <rect width="300" height="225" fill="url(#bgG)"/>
+
+            <!-- ground -->
+            <ellipse cx="150" cy="207" rx="92" ry="15" fill="#8fae63" opacity="0.5"/>
+            <ellipse cx="150" cy="204" rx="74" ry="10" fill="#a7c47a" opacity="0.75"/>
+            <g stroke="#6f9a45" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.85">
+              <path d="M116,205 q-3,-9 -7,-12"/><path d="M126,206 q1,-10 -1,-14"/>
+              <path d="M180,205 q3,-9 8,-12"/><path d="M190,206 q0,-10 3,-14"/>
             </g>
-            <circle cx="150" cy="150" r="5.5" fill="#5f3d1c"/>
+
+            <!-- branches -->
+            <g stroke="url(#trunkG)" stroke-linecap="round" fill="none">
+              <path d="M150,150 C110,122 78,104 48,81" stroke-width="7"/>
+              <path d="M150,150 C140,122 122,90 116,73" stroke-width="7"/>
+              <path d="M150,150 C160,122 178,90 184,73" stroke-width="7"/>
+              <path d="M150,150 C190,122 222,104 252,81" stroke-width="7"/>
+            </g>
+
+            <!-- trunk + roots -->
+            <path d="M144,150 C143,170 138,190 132,206 L168,206 C162,190 157,170 156,150 C154,145 146,145 144,150 Z" fill="url(#trunkG)"/>
+            <path d="M150,152 C150,172 149,190 150,205" stroke="#6a411d" stroke-width="1.4" opacity="0.5" fill="none"/>
+            <path d="M133,205 q-15,-1 -24,4" stroke="url(#trunkG)" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <path d="M167,205 q15,-1 24,4" stroke="url(#trunkG)" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <circle cx="150" cy="150" r="4.5" fill="#5f3d1c"/>
+
+            <!-- leaves -->
+            <use href="#leaf" transform="translate(90,104) rotate(-32)"/>
+            <use href="#leaf" transform="translate(44,86) rotate(-58)"/>
+            <use href="#leaf" transform="translate(54,88) rotate(-18)"/>
+            <use href="#leaf" transform="translate(128,96) rotate(-42)"/>
+            <use href="#leaf" transform="translate(112,80) rotate(-64)"/>
+            <use href="#leaf" transform="translate(122,80) rotate(-20)"/>
+            <use href="#leaf" transform="translate(172,96) rotate(42)"/>
+            <use href="#leaf" transform="translate(188,80) rotate(64)"/>
+            <use href="#leaf" transform="translate(178,80) rotate(20)"/>
+            <use href="#leaf" transform="translate(210,104) rotate(32)"/>
+            <use href="#leaf" transform="translate(256,86) rotate(58)"/>
+            <use href="#leaf" transform="translate(246,88) rotate(18)"/>
+
+            <!-- photos -->
             <image href="images/lotus-whole-plant.jpg" x="21" y="27" width="54" height="54" clip-path="url(#mt1)" preserveAspectRatio="xMidYMid slice"/>
-            <circle cx="48" cy="54" r="27" fill="none" stroke="#fffdf7" stroke-width="3"/>
+            <circle cx="48" cy="54" r="27" fill="none" stroke="#fffdf7" stroke-width="3.5"/><circle cx="48" cy="54" r="28.5" fill="none" stroke="#c9bfa6" stroke-width="1"/>
             <image href="images/ocotillo-whole-plant.jpg" x="89" y="19" width="54" height="54" clip-path="url(#mt2)" preserveAspectRatio="xMidYMid slice"/>
-            <circle cx="116" cy="46" r="27" fill="none" stroke="#fffdf7" stroke-width="3"/>
+            <circle cx="116" cy="46" r="27" fill="none" stroke="#fffdf7" stroke-width="3.5"/><circle cx="116" cy="46" r="28.5" fill="none" stroke="#c9bfa6" stroke-width="1"/>
             <image href="images/mango-whole-tree.jpg" x="157" y="19" width="54" height="54" clip-path="url(#mt3)" preserveAspectRatio="xMidYMid slice"/>
-            <circle cx="184" cy="46" r="27" fill="none" stroke="#fffdf7" stroke-width="3"/>
+            <circle cx="184" cy="46" r="27" fill="none" stroke="#fffdf7" stroke-width="3.5"/><circle cx="184" cy="46" r="28.5" fill="none" stroke="#c9bfa6" stroke-width="1"/>
             <image href="images/cannabis-sativa-whole-plant.jpg" x="225" y="27" width="54" height="54" clip-path="url(#mt4)" preserveAspectRatio="xMidYMid slice"/>
-            <circle cx="252" cy="54" r="27" fill="none" stroke="#fffdf7" stroke-width="3"/>
+            <circle cx="252" cy="54" r="27" fill="none" stroke="#fffdf7" stroke-width="3.5"/><circle cx="252" cy="54" r="28.5" fill="none" stroke="#c9bfa6" stroke-width="1"/>
           </svg>
         </div>
         <div class="card-body">
