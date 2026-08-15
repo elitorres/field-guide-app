@@ -6,28 +6,15 @@
   <title>Family Tree | Wild Roots Field Guide</title>
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .infographic {
-      background: #fffdf7;
-      border: 1px solid #ddd3bd;
-      border-radius: 12px;
-      padding: 1.2rem 1.2rem 1.6rem;
-      max-width: 1040px;
-      margin: 0 auto;
+    .tree-figure { max-width: 1040px; margin: 0 auto; }
+    .tree-figure img {
+      width: 100%; height: auto; display: block;
+      border: 1px solid #ddd3bd; border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
-    .infographic h2 { text-align: center; color: var(--color-forest, #1f3d24); margin: 0.2rem 0 0.1rem; }
-    .infographic .sub { text-align:center; color:#6b6255; font-size:0.9rem; margin:0 0 0.6rem; }
-    .tree-svg { width: 100%; height: auto; display:block; }
-    .key-box {
-      margin-top: 1rem; border: 1.5px solid #c9bfa6; border-radius: 10px;
-      padding: 0.8rem 1rem; background: #fbf8ef;
+    .tree-figure figcaption {
+      font-size: 0.82rem; color: #7a7263; text-align: center; margin-top: 0.7rem;
     }
-    .key-box h3 { margin: 0 0 0.5rem; color: var(--color-forest, #1f3d24); font-size: 1.05rem; letter-spacing:0.5px; }
-    .key-box dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 0.35rem 0.7rem; }
-    .key-box dt { font-weight: 700; color: #3a4a2f; }
-    .key-box dd { margin: 0; color: #4a4436; font-size: 0.92rem; }
-    .key-swatch { display:inline-block; width:0.8rem; height:0.8rem; border-radius:2px; vertical-align:middle; margin-right:0.35rem; }
-    .credit-note { font-size: 0.78rem; color: #7a7263; margin-top: 0.7rem; text-align:center; }
   </style>
 </head>
 <body>
@@ -50,128 +37,19 @@
   <main class="page-content">
     <h1 class="page-title">Family Tree</h1>
     <p class="page-subtitle">
-      How the four featured species are related. All four are flowering plants (angiosperms) and eudicots —
+      How the four featured species are related: all four are flowering plants (angiosperms) and eudicots —
       the shared traits on the trunk — while each branch marks a trait that sets one or more species apart.
+      The full key and image credits appear on the graphic below.
     </p>
 
-    <div class="infographic">
-      <h2>Family Tree of the Four Wild Roots Species</h2>
-      <p class="sub">Trunk = traits shared by all four &nbsp;•&nbsp; Branches = distinguishing traits (see Key below)</p>
-
-      <svg class="tree-svg" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" role="img"
-           aria-label="Family tree relating hemp, mango, American lotus, and ocotillo. Trunk labeled angiosperms and eudicots; branches labeled with distinguishing traits.">
-        <defs>
-          <clipPath id="c1"><rect x="24" y="14" width="176" height="132" rx="8"/></clipPath>
-          <clipPath id="c2"><rect x="269" y="14" width="176" height="132" rx="8"/></clipPath>
-          <clipPath id="c3"><rect x="539" y="14" width="176" height="132" rx="8"/></clipPath>
-          <clipPath id="c4"><rect x="794" y="14" width="176" height="132" rx="8"/></clipPath>
-        </defs>
-
-        <!-- ===== Branches (drawn first, behind labels) ===== -->
-        <g stroke="#8a5a2b" stroke-width="9" stroke-linecap="round" fill="none">
-          <line x1="330" y1="486" x2="330" y2="395"/>            <!-- trunk -->
-          <line x1="330" y1="395" x2="112" y2="210"/>            <!-- to Lotus -->
-          <line x1="330" y1="395" x2="485" y2="330"/>            <!-- spine to N2 -->
-          <line x1="485" y1="330" x2="357" y2="210"/>            <!-- to Ocotillo -->
-          <line x1="485" y1="330" x2="645" y2="280"/>            <!-- spine to N3 -->
-          <line x1="645" y1="280" x2="627" y2="210"/>            <!-- to Mango -->
-          <line x1="645" y1="280" x2="882" y2="210"/>            <!-- to Hemp -->
-        </g>
-        <!-- node dots -->
-        <g fill="#5f3d1c">
-          <circle cx="330" cy="395" r="6"/>
-          <circle cx="485" cy="330" r="6"/>
-          <circle cx="645" cy="280" r="6"/>
-        </g>
-
-        <!-- ===== Photos + species labels ===== -->
-        <!-- American Lotus -->
-        <image href="images/lotus-whole-plant.jpg" x="24" y="14" width="176" height="132" preserveAspectRatio="xMidYMid slice" clip-path="url(#c1)"/>
-        <rect x="24" y="14" width="176" height="132" rx="8" fill="none" stroke="#c9bfa6" stroke-width="1.5"/>
-        <text x="112" y="164" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#1f3d24">American Lotus</text>
-        <text x="112" y="181" text-anchor="middle" font-family="Georgia, serif" font-size="12.5" font-style="italic" fill="#6b6255">Nelumbo lutea</text>
-        <text x="112" y="196" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8a8272">Photo: Famartin (2025), CC BY-SA 4.0</text>
-
-        <!-- Ocotillo -->
-        <image href="images/ocotillo-whole-plant.jpg" x="269" y="14" width="176" height="132" preserveAspectRatio="xMidYMid slice" clip-path="url(#c2)"/>
-        <rect x="269" y="14" width="176" height="132" rx="8" fill="none" stroke="#c9bfa6" stroke-width="1.5"/>
-        <text x="357" y="164" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#1f3d24">Ocotillo</text>
-        <text x="357" y="181" text-anchor="middle" font-family="Georgia, serif" font-size="12.5" font-style="italic" fill="#6b6255">Fouquieria splendens</text>
-        <text x="357" y="196" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8a8272">Photo: J. Gilkeson / USFWS (2017), public domain</text>
-
-        <!-- Mango -->
-        <image href="images/mango-whole-tree.jpg" x="539" y="14" width="176" height="132" preserveAspectRatio="xMidYMid slice" clip-path="url(#c3)"/>
-        <rect x="539" y="14" width="176" height="132" rx="8" fill="none" stroke="#c9bfa6" stroke-width="1.5"/>
-        <text x="627" y="164" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#1f3d24">Indian Mango</text>
-        <text x="627" y="181" text-anchor="middle" font-family="Georgia, serif" font-size="12.5" font-style="italic" fill="#6b6255">Mangifera indica</text>
-        <text x="627" y="196" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8a8272">Photo: B.navez (2005), CC BY-SA 3.0</text>
-
-        <!-- Hemp -->
-        <image href="images/cannabis-sativa-whole-plant.jpg" x="794" y="14" width="176" height="132" preserveAspectRatio="xMidYMid slice" clip-path="url(#c4)"/>
-        <rect x="794" y="14" width="176" height="132" rx="8" fill="none" stroke="#c9bfa6" stroke-width="1.5"/>
-        <text x="882" y="164" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#1f3d24">Hemp / Marijuana</text>
-        <text x="882" y="181" text-anchor="middle" font-family="Georgia, serif" font-size="12.5" font-style="italic" fill="#6b6255">Cannabis sativa</text>
-        <text x="882" y="196" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8a8272">Photo: Chmee2 (2010), CC BY 3.0</text>
-
-        <!-- ===== Branch trait labels (with white halo for legibility) ===== -->
-        <g font-family="sans-serif" font-size="12.5" fill="#7a4a12" font-weight="700"
-           style="paint-order:stroke; stroke:#fffdf7; stroke-width:3.5px; stroke-linejoin:round;">
-          <!-- Lotus branch -->
-          <text x="150" y="300" text-anchor="middle">Aquatic habit;
-            <tspan x="150" dy="15">thermogenic flowers</tspan></text>
-          <!-- Ocotillo branch -->
-          <text x="388" y="258" text-anchor="middle">Tubular,
-            <tspan x="388" dy="15">hummingbird-pollinated flowers</tspan></text>
-          <!-- Mango branch -->
-          <text x="560" y="238" text-anchor="middle">Fleshy drupe
-            <tspan x="560" dy="15">(stone fruit)</tspan></text>
-          <!-- Hemp branch -->
-          <text x="800" y="240" text-anchor="middle">Dioecious &amp; wind-pollinated;
-            <tspan x="800" dy="15">cannabinoid trichomes</tspan></text>
-          <!-- Rosids (shared by Mango + Hemp) -->
-          <text x="690" y="300" text-anchor="middle">Rosids</text>
-        </g>
-
-        <!-- ===== Trunk (shared-by-all) label ===== -->
-        <g font-family="sans-serif" style="paint-order:stroke; stroke:#fffdf7; stroke-width:3.5px; stroke-linejoin:round;">
-          <text x="348" y="430" font-size="14" font-weight="700" fill="#1f3d24">Eudicots</text>
-          <text x="348" y="460" font-size="14" font-weight="700" fill="#1f3d24">Angiosperms</text>
-          <text x="348" y="479" font-size="11" fill="#4a4436">(shared by all four)</text>
-        </g>
-      </svg>
-
-      <div class="key-box">
-        <h3>KEY</h3>
-        <dl>
-          <dt>Angiosperms <span style="font-weight:400;color:#6b6255;">(trunk — all 4)</span></dt>
-          <dd>Flowering plants whose seeds are enclosed within an ovary that ripens into a fruit.</dd>
-
-          <dt>Eudicots <span style="font-weight:400;color:#6b6255;">(trunk — all 4)</span></dt>
-          <dd>Angiosperms whose seeds have two cotyledons (seed leaves) and whose pollen grains have three grooves.</dd>
-
-          <dt>Rosids <span style="font-weight:400;color:#6b6255;">(mango + hemp)</span></dt>
-          <dd>A large sub-group of eudicots; mango and hemp share this more recent common ancestor, unlike lotus and ocotillo.</dd>
-
-          <dt>Aquatic habit; thermogenic flowers <span style="font-weight:400;color:#6b6255;">(American lotus)</span></dt>
-          <dd>Roots anchor in submerged mud while leaves and flowers rise above the water; the flowers generate their own heat to spread scent and reward pollinators.</dd>
-
-          <dt>Tubular, hummingbird-pollinated flowers <span style="font-weight:400;color:#6b6255;">(ocotillo)</span></dt>
-          <dd>Bright-red tubular flowers shaped for pollination by hovering hummingbirds (and carpenter bees).</dd>
-
-          <dt>Fleshy drupe (stone fruit) <span style="font-weight:400;color:#6b6255;">(mango)</span></dt>
-          <dd>A fruit with a soft, fleshy outer layer surrounding a single large, hard-shelled seed (a "stone").</dd>
-
-          <dt>Dioecious &amp; wind-pollinated; cannabinoid trichomes <span style="font-weight:400;color:#6b6255;">(hemp)</span></dt>
-          <dd>Male and female flowers grow on separate plants and are pollinated by wind; glandular hairs (trichomes) produce cannabinoid compounds.</dd>
-        </dl>
-      </div>
-
-      <p class="credit-note">
-        Image credits: Chmee2 (2010), CC BY 3.0; B.navez (2005), CC BY-SA 3.0; Famartin (2025),
-        CC BY-SA 4.0; J. Gilkeson / U.S. Fish and Wildlife Service (2017), public domain. Full APA 7
-        citations appear in the <a href="references.html">Running References List</a>, organized by species.
-      </p>
-    </div>
+    <figure class="tree-figure">
+      <img src="images/family-tree-illustrated.jpg"
+           alt="Illustrated family tree of the four Wild Roots species — American Lotus (Nelumbo lutea), Ocotillo (Fouquieria splendens), Indian Mango (Mangifera indica), and Hemp (Cannabis sativa). A trunk labeled Angiosperms and Eudicots (shared by all four) branches into each species' distinguishing trait, with a key defining every trait." />
+      <figcaption>
+        Photo and source credits are shown on the graphic; full APA 7 citations for the four images appear in the
+        <a href="references.html">Running References List</a>, organized by species.
+      </figcaption>
+    </figure>
   </main>
 
   <footer class="site-footer">
